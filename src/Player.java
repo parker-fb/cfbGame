@@ -8,12 +8,49 @@ public class Player {
 
     public Player(){
 
-        x = (int)(Math.random()+20);
-        y = (int)(Math.random()+20);
+        x = (int)(Math.random()*400)+20;
+        y = (int)(Math.random()*700)+20;
         size = 30;
         color = Color.BLUE;
+    }
 
+    public Player(int x, int y){
+        this.x = x;
+        this.y = y;
+        size = 30;
+        color = Color.BLACK;
+    }
 
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 
     public void draw(Graphics g){
@@ -21,5 +58,14 @@ public class Player {
         g.fillOval(x, y, size, size);
     }
 
+    public void checkDefeat(Player p){
+        int bx = p.x - this.x;
+        int by = p.y - this.y;
+        int dist2 = bx * bx + by * by;
+        int radius = (this.size/2) + (p.size/2);
+        if (dist2 <= radius * radius){
+            System.out.println("You lose, Sorry!");
+        }
+    }
 
 }
