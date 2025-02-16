@@ -77,6 +77,8 @@ public class Field extends JPanel {
         player0.draw(g);
         for (int i = 0; i < players.length; i++){
             players[i].draw(g);
+            players[i].move();
+            players[i].bounds(this);
             player0.checkDefeat(players[i]);
         }
 
@@ -119,7 +121,7 @@ public class Field extends JPanel {
 
 
         try {
-            Thread.sleep(50);
+            Thread.sleep(25);
         }
         catch(Exception e){
 

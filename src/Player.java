@@ -2,7 +2,7 @@ import java.awt.*;
 
 public class Player {
 
-    private int x,y,size;
+    private int x,y,size, xSpeed;
     private Color color;
 
 
@@ -12,6 +12,7 @@ public class Player {
         y = (int)(Math.random()*700)+20;
         size = 30;
         color = Color.BLUE;
+        xSpeed = (int)(Math.random()*6);
     }
 
     public Player(int x, int y){
@@ -19,7 +20,17 @@ public class Player {
         this.y = y;
         size = 30;
         color = Color.BLACK;
+        xSpeed = 5;
     }
+
+    public int getxSpeed() {
+        return xSpeed;
+    }
+
+    public void setxSpeed(int xSpeed) {
+        this.xSpeed = xSpeed;
+    }
+
 
     public int getX() {
         return x;
@@ -66,6 +77,21 @@ public class Player {
         if (dist2 <= radius * radius){
             System.out.println("You lose, Sorry!");
         }
+    }
+
+    public void move(){
+        x+=xSpeed;
+    }
+
+    public void bounds(Field f){
+        if (x > f.getSize().getWidth() - size){
+            xSpeed *= -1;
+        }
+        if (x < 0){
+            xSpeed *= -1;
+        }
+
+
     }
 
 }
