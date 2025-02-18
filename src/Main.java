@@ -9,7 +9,6 @@ public class Main {
 
     Field panel = new Field();
     panel.setBackground(new Color(50,161,87));
-    //have background be a football field
 
 
 

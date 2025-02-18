@@ -9,7 +9,7 @@ public class Player {
     public Player(){
 
         x = (int)(Math.random()*400)+20;
-        y = (int)(Math.random()*700)+20;
+        y = (int)(Math.random()*680)+10;
         size = 30;
         color = Color.BLUE;
         xSpeed = (int)(Math.random()*6);
@@ -92,6 +92,15 @@ public class Player {
         }
 
 
+    }
+
+    public void playerBounds(Field f){
+        if (x > f.getSize().getWidth() - size){
+            System.out.println("You lose! Out of Bounds");
+        }
+        if (x < 0){
+            System.out.println("You lose! Out of Bounds");
+        }
     }
 
 }

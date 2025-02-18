@@ -56,6 +56,11 @@ public class Field extends JPanel {
                 }
 
 
+                else if (e.getKeyCode() == 16){
+                    //boost
+                    player0.setY(player0.getY()-16);
+                }
+
             }
         });
 
@@ -74,13 +79,7 @@ public class Field extends JPanel {
         super.paintComponent(g);
 //        g.setColor(Color.BLACK);
 //        g.fillOval(200,710,30,30);
-        player0.draw(g);
-        for (int i = 0; i < players.length; i++){
-            players[i].draw(g);
-            players[i].move();
-            players[i].bounds(this);
-            player0.checkDefeat(players[i]);
-        }
+
 
         g.setColor(Color.WHITE);
         g.drawLine(0, 95, 450, 95);
@@ -112,6 +111,15 @@ public class Field extends JPanel {
             yy1+=100;
             yy2+=100;
             g.drawLine(xx, yy1, xx, yy2);
+        }
+
+        player0.draw(g);
+        for (int i = 0; i < players.length; i++){
+            players[i].draw(g);
+            players[i].move();
+            players[i].bounds(this);
+            player0.checkDefeat(players[i]);
+            player0.playerBounds(this);
         }
 
 //        for(Player p: players){
