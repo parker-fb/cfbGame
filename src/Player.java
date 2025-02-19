@@ -101,6 +101,10 @@ public class Player {
         if (x < 0){
             System.out.println("You lose! Out of Bounds");
         }
+        if (y < 95){
+            System.out.println("Touchdown!");
+        }
     }
+
 
 }

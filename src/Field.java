@@ -10,6 +10,7 @@ public class Field extends JPanel {
     private Player player0;
     private Player[] players;
     private JLabel endzone;
+    int change = 0;
 
 
 
@@ -69,6 +70,26 @@ public class Field extends JPanel {
         endzone.setForeground(Color.WHITE);
         endzone.setBounds(150, 100, 200, 50);
         this.add(endzone);
+
+
+
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (change == 0){
+                endzone = new JLabel("PENN STATE");
+                change++;
+                }
+                else if (change == 1){
+                    endzone = new JLabel("OHIO STATE");
+                    change++;
+                }
+                else if (change == 2){
+                    endzone = new JLabel("ALABAMA");
+                    change++;
+                }
+            }
+        });
 
 
     }
