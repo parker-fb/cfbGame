@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Field extends JPanel {
 
@@ -72,24 +74,99 @@ public class Field extends JPanel {
         this.add(endzone);
 
 
-
-        addKeyListener(new KeyAdapter() {
+        addMouseListener(new MouseAdapter() {
             @Override
-            public void keyPressed(KeyEvent e) {
+            public void mousePressed(MouseEvent e) {
                 if (change == 0){
-                endzone = new JLabel("PENN STATE");
+                    //System.out.println("0");
+                endzone.setText("PENN STATE");
                 change++;
                 }
                 else if (change == 1){
-                    endzone = new JLabel("OHIO STATE");
+                    //System.out.println("1");
+                    endzone.setText("OHIO STATE");
                     change++;
                 }
                 else if (change == 2){
-                    endzone = new JLabel("ALABAMA");
+                    //System.out.println("2");
+                    endzone.setText("ALABAMA");
                     change++;
+                }
+                else if (change == 3){
+                    endzone.setText("ILLINOIS");
+                    change++;
+                }
+                else if (change == 4){
+                    endzone.setText("MICHIGAN STATE");
+                    change++;
+                }
+                else if (change == 5){
+                    endzone.setText("INDIANA");
+                    change++;
+                }
+                else if (change == 6){
+                    endzone.setText("IOWA");
+                    change++;
+                }
+                else if (change == 7){
+                    endzone.setText("GEORGIA");
+                    change++;
+                }
+                else if (change == 8){
+                    endzone.setText("OREGON");
+                    change++;
+                }
+                else if (change == 9){
+                    endzone.setText("WISCONSIN");
+                    change++;
+                }
+                else if (change == 10){
+                    endzone.setText("USC");
+                    change++;
+                }
+                else if (change == 11){
+                    endzone.setText("TEXAS");
+                    change++;
+                }
+                else if (change == 12){
+                    endzone.setText("LSU");
+                    change++;
+                }
+                else if (change == 13){
+                    endzone.setText("TENNESSEE");
+                    change++;
+                }
+                else if (change == 14){
+                    endzone.setText("NOTRE DAME");
+                    change++;
+                }
+                else if (change == 15){
+                    endzone.setText("ARIZONA STATE");
+                    change = 0;
                 }
             }
         });
+
+//        addKeyListener(new KeyAdapter() {
+//            @Override
+//            public void keyPressed(KeyEvent e) {
+//                if (change == 0){
+//                    System.out.println("0");
+//                endzone.setText("PENN STATE");
+//                change++;
+//                }
+//                else if (change == 1){
+//                    System.out.println("1");
+//                    endzone.setText("OHIO STATE");
+//                    change++;
+//                }
+//                else if (change == 2){
+//                    System.out.println("2");
+//                    endzone.setText("ALABAMA");
+//                    change++;
+//                }
+//            }
+//        });
 
 
     }
