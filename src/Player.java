@@ -1,9 +1,13 @@
+import javax.swing.*;
 import java.awt.*;
 
 public class Player {
 
     private int x,y,size, xSpeed;
     private Color color;
+    private ImageIcon pic = new ImageIcon("fb.png");
+    private boolean td;
+
 
 
     public Player(){
@@ -64,9 +68,22 @@ public class Player {
         this.color = color;
     }
 
+    public boolean isTd() {
+        return td;
+    }
+
+    public void setTd(boolean td) {
+        this.td = td;
+    }
+
     public void draw(Graphics g){
         g.setColor(color);
         g.fillOval(x, y, size, size);
+    }
+
+    public void playerDraw(Graphics g){
+        g.setColor(color);
+        g.drawImage(pic.getImage(), x, y, size, size,null);
     }
 
     public void checkDefeat(Player p){
@@ -102,7 +119,16 @@ public class Player {
             System.out.println("You lose! Out of Bounds");
         }
         if (y < 95){
-            System.out.println("Touchdown!");
+            if (!isTd()) {
+                System.out.println("I scored!");
+                setTd(true);
+
+                // End the game
+                if (f instanceof Field) {
+                    ((Field) f).setGameOver(true);
+                }
+            }
+
         }
     }
 

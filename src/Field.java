@@ -31,6 +31,7 @@ public class Field extends JPanel {
 
 
 
+
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -80,68 +81,89 @@ public class Field extends JPanel {
                 if (change == 0){
                     //System.out.println("0");
                 endzone.setText("PENN STATE");
+                    endzone.setForeground(Color.BLUE);
                 change++;
                 }
                 else if (change == 1){
                     //System.out.println("1");
                     endzone.setText("OHIO STATE");
+                    endzone.setForeground(Color.RED);
                     change++;
                 }
                 else if (change == 2){
                     //System.out.println("2");
                     endzone.setText("ALABAMA");
+                    endzone.setForeground(Color.RED);
                     change++;
                 }
                 else if (change == 3){
                     endzone.setText("ILLINOIS");
+                    endzone.setForeground(new Color(247, 169, 79));
                     change++;
                 }
                 else if (change == 4){
                     endzone.setText("MICHIGAN STATE");
+                    endzone.setForeground(new Color(17, 133, 25));
                     change++;
                 }
                 else if (change == 5){
                     endzone.setText("INDIANA");
+                    endzone.setForeground(Color.RED);
                     change++;
                 }
                 else if (change == 6){
                     endzone.setText("IOWA");
+                    endzone.setForeground(new Color(255, 193, 23));
                     change++;
                 }
                 else if (change == 7){
                     endzone.setText("GEORGIA");
+                    endzone.setForeground(Color.RED);
                     change++;
                 }
                 else if (change == 8){
                     endzone.setText("OREGON");
+                    endzone.setForeground(new Color(17, 209, 30));
                     change++;
                 }
                 else if (change == 9){
                     endzone.setText("WISCONSIN");
+                    endzone.setForeground(Color.RED);
                     change++;
                 }
                 else if (change == 10){
                     endzone.setText("USC");
+                    endzone.setForeground(Color.RED);
                     change++;
                 }
                 else if (change == 11){
                     endzone.setText("TEXAS");
+                    endzone.setForeground(new Color(242, 147, 39));
                     change++;
                 }
                 else if (change == 12){
                     endzone.setText("LSU");
+                    endzone.setForeground(new Color(178, 27, 242));
                     change++;
                 }
                 else if (change == 13){
                     endzone.setText("TENNESSEE");
+                    endzone.setForeground(new Color(242, 147, 39));
                     change++;
                 }
                 else if (change == 14){
                     endzone.setText("NOTRE DAME");
+                    endzone.setForeground(Color.GREEN);
                     change++;
                 }
                 else if (change == 15){
                     endzone.setText("ARIZONA STATE");
+                    endzone.setForeground(Color.RED);
+                    change++;
+                }
+                else if (change == 16){
+                    endzone.setText("ENDZONE");
+                    endzone.setForeground(Color.WHITE);
                     change = 0;
                 }
             }
@@ -172,11 +194,20 @@ public class Field extends JPanel {
     }
 
 
+    private boolean gameOver = false;
+
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
 //        g.setColor(Color.BLACK);
 //        g.fillOval(200,710,30,30);
+
+        if (gameOver) {
+            g.setColor(Color.WHITE);
+            g.setFont(new Font("Arial", Font.BOLD, 40));
+            g.drawString("TOUCHDOWN!", 120, 350);
+            return;
+        }
 
 
         g.setColor(Color.WHITE);
@@ -214,6 +245,7 @@ public class Field extends JPanel {
         player0.draw(g);
         for (int i = 0; i < players.length; i++){
             players[i].draw(g);
+            player0.playerDraw(g);
             players[i].move();
             players[i].bounds(this);
             player0.checkDefeat(players[i]);
@@ -226,13 +258,20 @@ public class Field extends JPanel {
 
 
 
-        try {
-            Thread.sleep(25);
-        }
-        catch(Exception e){
 
+        if (!gameOver) {
+            try {
+                Thread.sleep(25);
+            } catch (Exception e) {
+
+            }
         }
 
+        repaint();
+    }
+
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
         repaint();
     }
 
