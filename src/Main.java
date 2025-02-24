@@ -11,6 +11,14 @@ public class Main {
     panel.setBackground(new Color(50,161,87));
 
 
+        System.out.println("------------------------------------------------------------------------------------------");
+        System.out.println("                  * Welcome to game *");
+        System.out.println("  * To start, click the screen to choose your team *");
+        System.out.println(" * Use WASD or arrow keys to move player through defense *");
+        System.out.println("* Score as many touchdowns as you can before timer runs out! *");
+        System.out.println("                    * Have fun! *");
+        System.out.println("------------------------------------------------------------------------------------------");
+
 
         frame.add(panel);
 

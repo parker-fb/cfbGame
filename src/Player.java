@@ -120,7 +120,7 @@ public class Player {
         }
         if (y < 95){
             if (!isTd()) {
-                System.out.println("I scored!");
+                System.out.println("score");
                 setTd(true);
 
                 // End the game
