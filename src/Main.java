@@ -43,7 +43,7 @@ public class Main {
         System.out.println("                                       * Have fun! *                                      ");
         System.out.println("------------------------------------------------------------------------------------------");
 
-
+//how can i make there be 3 difficulties, freshman:10 balls, varsity:15 balls, and heisman:20 balls where you choose them with buttons before the game starts
 
 
         frame.add(panel);
