@@ -322,12 +322,6 @@ public class Field extends JPanel {
 //        }
 
 
-
-
-
-
-
-
         //if (!gameOver) {
         try {
             Thread.sleep(25);
@@ -384,12 +378,6 @@ public class Field extends JPanel {
 
         repaint();
     }
-
-
-
-
-
-
 
 
 }

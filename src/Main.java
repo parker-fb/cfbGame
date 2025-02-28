@@ -4,34 +4,80 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
+
+
 public class Main {
     public static void main(String[] args) {
 
-
-
         JFrame frame = new JFrame();
         frame.setSize(450,780);
+        frame.setLayout(new CardLayout());
+
 
 
 
         //3 difficulties - freshman: 10 balls varsity: 15 balls heisman: 20 balls
-//        JButton f = new JButton("Freshman");
-//        f.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                int d = 10;
-//            }
-//        });
-//        JButton v = new JButton("Varsity");
-//        v.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                int d = 15;
-//            }
-//        });
 
-        Field panel = new Field(20);
-        panel.setBackground(new Color(50,161,87));
+        JLabel panel = new JLabel();
+        panel.setLayout(new GridLayout(4, 1));
+        JLabel title = new JLabel("Choose Difficulty", SwingConstants.CENTER);
+        title.setFont(new Font("Arial", Font.BOLD, 20));
+
+
+        JButton freshman = new JButton("Freshman");
+        JButton varsity = new JButton("Varsity");
+        JButton heisman = new JButton("Heisman");
+
+
+        panel.add(title);
+        panel.add(freshman);
+        panel.add(varsity);
+        panel.add(heisman);
+
+
+        frame.add(panel);
+
+
+        freshman.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.getContentPane().removeAll();
+                Field gamePanel = new Field(10);
+                gamePanel.setBackground(new Color(50,161,87));
+                frame.add(gamePanel);
+                //frame.repaint();
+                frame.revalidate();
+                gamePanel.requestFocusInWindow();
+            }
+        });
+
+
+        varsity.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.getContentPane().removeAll();
+                Field gamePanel = new Field(20);
+                gamePanel.setBackground(new Color(50,161,87));
+                frame.add(gamePanel);
+                //frame.repaint();
+                frame.revalidate();
+                gamePanel.requestFocusInWindow();
+            }
+        });
+
+
+        heisman.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.getContentPane().removeAll();
+                Field gamePanel = new Field(25);
+                gamePanel.setBackground(new Color(50,161,87));
+                frame.add(gamePanel);
+                //frame.repaint();
+                frame.revalidate();
+                gamePanel.requestFocusInWindow();
+            }
+        });
 
 
         System.out.println("------------------------------------------------------------------------------------------");
@@ -43,17 +89,12 @@ public class Main {
         System.out.println("                                       * Have fun! *                                      ");
         System.out.println("------------------------------------------------------------------------------------------");
 
-//how can i make there be 3 difficulties, freshman:10 balls, varsity:15 balls, and heisman:20 balls where you choose them with buttons before the game starts
 
-
-        frame.add(panel);
 //        panel.add(f);
 //        panel.add(v);
 
 
         frame.setVisible(true);
-
-
 
 
     }
