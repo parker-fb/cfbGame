@@ -109,6 +109,13 @@ public class Field extends JPanel {
         endzone.setBounds(150, 20, 200, 50);
         this.add(endzone);
 
+        int p = player0.getPoints();
+        String poi = p + "";
+        JLabel point = new JLabel(poi);
+        point.setBounds(50,50,50,50);
+        this.add(point);
+
+
 
 
 

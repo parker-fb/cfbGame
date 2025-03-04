@@ -9,6 +9,7 @@ public class Player {
     private Color color;
     private ImageIcon pic = new ImageIcon("fb.png");
     private boolean td;
+    private int points;
 
 
 
@@ -98,6 +99,13 @@ public class Player {
         this.td = td;
     }
 
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
 
     public void draw(Graphics g){
         g.setColor(color);
@@ -163,6 +171,9 @@ public class Player {
             if (!isTd()) {
                 //System.out.println("score");
                 setTd(true);
+
+                points += 7;
+                System.out.println(points);
 
                 ((Field)f).setGameOver(true, true, false);
 
