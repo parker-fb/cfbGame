@@ -8,6 +8,7 @@ public class Player {
     private int x,y,size, xSpeed;
     private Color color;
     private ImageIcon pic = new ImageIcon("fb.png");
+    private ImageIcon d = new ImageIcon("c_d.png");
     private boolean td;
     private int points;
 
@@ -116,6 +117,11 @@ public class Player {
     public void playerDraw(Graphics g){
         g.setColor(color);
         g.drawImage(pic.getImage(), x, y, size, size,null);
+    }
+
+    public void dDraw(Graphics g){
+        g.setColor(color);
+        g.drawImage(d.getImage(), x ,y, size, size,null);
     }
 
 

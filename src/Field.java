@@ -113,7 +113,7 @@ public class Field extends JPanel {
         String poi = p + "";
         JLabel point = new JLabel(poi);
         point.setBounds(50,50,50,50);
-        this.add(point);
+        //this.add(point);
 
 
 
@@ -315,7 +315,7 @@ public class Field extends JPanel {
 
         player0.draw(g);
         for (int i = 0; i < players.length; i++){
-            players[i].draw(g);
+            players[i].dDraw(g);
             player0.playerDraw(g);
             players[i].move();
             players[i].bounds(this);
