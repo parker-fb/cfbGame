@@ -14,12 +14,16 @@ public class Field extends JPanel {
     private boolean win = false;
     private boolean tackle = false;
     private int defenders;
+    private JLabel point;
+    private String poi = "0";
 
 
 
 
     public Field(int d){
 
+
+         point = new JLabel(poi);
         defenders = d;
 
         //int check = 0;
@@ -109,11 +113,7 @@ public class Field extends JPanel {
         endzone.setBounds(150, 20, 200, 50);
         this.add(endzone);
 
-        int p = player0.getPoints();
-        String poi = p + "";
-        JLabel point = new JLabel(poi);
-        point.setBounds(50,50,50,50);
-        //this.add(point);
+
 
 
 
@@ -259,6 +259,11 @@ public class Field extends JPanel {
 
         //System.out.println(gameOver);
 
+        int p = player0.getPoints();
+         poi = p + "";
+        point.setBounds(50,50,50,50);
+        this.add(point);
+
 
         if (gameOver) {
             g.setColor(Color.WHITE);
@@ -315,7 +320,8 @@ public class Field extends JPanel {
 
         player0.draw(g);
         for (int i = 0; i < players.length; i++){
-            players[i].dDraw(g);
+            //players[i].dDraw(g);
+            players[i].draw(g);
             player0.playerDraw(g);
             players[i].move();
             players[i].bounds(this);
