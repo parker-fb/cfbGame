@@ -260,7 +260,9 @@ public class Field extends JPanel {
         //System.out.println(gameOver);
 
         int p = player0.getPoints();
-         poi = p + "";
+        poi = p + "";
+        point.setText("");
+        point = new JLabel(poi);
         point.setBounds(50,50,50,50);
         this.add(point);
 
