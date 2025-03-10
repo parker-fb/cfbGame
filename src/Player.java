@@ -2,7 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 
 
+
+
 public class Player {
+
+
 
 
     private int x,y,size, xSpeed;
@@ -17,7 +21,15 @@ public class Player {
 
 
 
+
+
+
+
+
+
     public Player(){
+
+
 
 
         x = (int)(Math.random()*400)+20;
@@ -30,6 +42,8 @@ public class Player {
     }
 
 
+
+
     public Player(int x, int y){
         this.x = x;
         this.y = y;
@@ -39,9 +53,13 @@ public class Player {
     }
 
 
+
+
     public int getxSpeed() {
         return xSpeed;
     }
+
+
 
 
     public void setxSpeed(int xSpeed) {
@@ -51,9 +69,15 @@ public class Player {
 
 
 
+
+
+
+
     public int getX() {
         return x;
     }
+
+
 
 
     public void setX(int x) {
@@ -61,9 +85,13 @@ public class Player {
     }
 
 
+
+
     public int getY() {
         return y;
     }
+
+
 
 
     public void setY(int y) {
@@ -71,9 +99,13 @@ public class Player {
     }
 
 
+
+
     public int getSize() {
         return size;
     }
+
+
 
 
     public void setSize(int size) {
@@ -81,9 +113,13 @@ public class Player {
     }
 
 
+
+
     public Color getColor() {
         return color;
     }
+
+
 
 
     public void setColor(Color color) {
@@ -91,22 +127,29 @@ public class Player {
     }
 
 
+
+
     public boolean isTd() {
         return td;
     }
+
+
 
 
     public void setTd(boolean td) {
         this.td = td;
     }
 
+
     public int getPoints() {
         return points;
     }
 
+
     public void setPoints(int points) {
         this.points = points;
     }
+
 
     public void draw(Graphics g){
         g.setColor(color);
@@ -114,15 +157,21 @@ public class Player {
     }
 
 
+
+
     public void playerDraw(Graphics g){
         g.setColor(color);
         g.drawImage(pic.getImage(), x, y, size, size,null);
     }
 
+
     public void dDraw(Graphics g){
         g.setColor(color);
         g.drawImage(d.getImage(), x ,y, size, size,null);
     }
+
+
+
 
 
 
@@ -135,7 +184,11 @@ public class Player {
         if (dist2 <= radius * radius){
 
 
+
+
             ((Field)f).setGameOver(true, false, true);
+
+
 
 
             //System.out.println("You lose, Sorry!");
@@ -143,9 +196,13 @@ public class Player {
     }
 
 
+
+
     public void move(){
         x+=xSpeed;
     }
+
+
 
 
     //for defense to go back and forth
@@ -157,7 +214,10 @@ public class Player {
             xSpeed *= -1;
         }
 
+
     }
+
+
 
 
     //see if player runs out of bound or scores
@@ -172,23 +232,33 @@ public class Player {
         }
 
 
+
+
         //player scores
         if (y < 95){
             if (!isTd()) {
                 //System.out.println("score");
                 setTd(true);
 
+
                 points += 7;
-                System.out.println(points);
+                //System.out.println(points);
+
 
                 ((Field)f).setGameOver(true, true, false);
+
+
 
 
             }
 
 
+
+
         }
     }
+
+
 
 
 }

@@ -3,7 +3,12 @@ import java.awt.*;
 import java.awt.event.*;
 
 
+
+
 public class Field extends JPanel {
+
+
+
 
 
 
@@ -15,7 +20,11 @@ public class Field extends JPanel {
     private boolean tackle = false;
     private int defenders;
     private JLabel point;
-    private String poi = "0";
+    private String poi = "00";
+
+
+
+
 
 
 
@@ -23,8 +32,18 @@ public class Field extends JPanel {
     public Field(int d){
 
 
-         point = new JLabel(poi);
+        JLabel scorebug = new JLabel("Your Score");
+        scorebug.setBounds(345, 675, 100, 50);
+        scorebug.setFont(new Font("Arial", Font.PLAIN, 20));
+        scorebug.setForeground(Color.WHITE);
+        this.add(scorebug);
+
+
+        point = new JLabel(poi);
+        point.setBounds(380,705,50,50);
+        this.add(point);
         defenders = d;
+
 
         //int check = 0;
         //while(check == 0){
@@ -39,8 +58,12 @@ public class Field extends JPanel {
         //}
 
 
+
+
         setFocusable(true);
-        //setLayout(null);
+        setLayout(null);
+
+
 
 
         player0 = new Player(200,710);
@@ -51,13 +74,22 @@ public class Field extends JPanel {
 
 
 
+
+
+
         //speed/direction of player
+
+
 
 
         addKeyListener(new KeyAdapter() {
 
 
+
+
             private int speed = 8;
+
+
 
 
             @Override
@@ -65,9 +97,13 @@ public class Field extends JPanel {
                 //System.out.println(e);
 
 
+
+
                 if (e.getKeyCode() == 16) {
                     speed = 16;
                 }
+
+
 
 
                 if (e.getKeyCode() == 68 || e.getKeyCode() == 39) {
@@ -87,11 +123,17 @@ public class Field extends JPanel {
 
 
 
+
+
+
+
 //                else if (e.getKeyCode() == 16){
 //                    //boost
 //                    player0.setY(player0.getY()-16);
 //                }
             }
+
+
 
 
             @Override
@@ -104,15 +146,11 @@ public class Field extends JPanel {
 
 
 
+
+
+
+
         });
-
-
-        endzone = new JLabel("ENDZONE");
-        endzone.setFont(new Font("Arial", Font.BOLD, 30));
-        endzone.setForeground(Color.WHITE);
-        endzone.setBounds(150, 20, 200, 50);
-        this.add(endzone);
-
 
 
 
@@ -122,6 +160,7 @@ public class Field extends JPanel {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
+                System.out.println(e);
                 if (!gameOver) {
                     if (change == 0) {
                         //System.out.println("0");
@@ -202,9 +241,21 @@ public class Field extends JPanel {
 
 
 
+        endzone = new JLabel("ENDZONE");
+        endzone.setFont(new Font("Arial", Font.BOLD, 30));
+        endzone.setForeground(Color.WHITE);
+        endzone.setHorizontalAlignment(SwingConstants.CENTER);
+        endzone.setBounds(0, 20, 450, 50);
+        this.add(endzone);
+
+
+
+
         addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
+
+
 
 
                 if (gameOver) {
@@ -212,8 +263,12 @@ public class Field extends JPanel {
                 }
 
 
+
+
             }
         });
+
+
 
 
 //        addKeyListener(new KeyAdapter() {
@@ -240,12 +295,24 @@ public class Field extends JPanel {
 
 
 
+
+
+
+
     }
 
 
 
 
+
+
+
+
     private boolean gameOver = false;
+
+
+
+
 
 
 
@@ -257,14 +324,16 @@ public class Field extends JPanel {
 //        g.fillOval(200,710,30,30);
 
 
+
+
         //System.out.println(gameOver);
 
-        int p = player0.getPoints();
-        poi = p + "";
-        point.setText("");
-        point = new JLabel(poi);
-        point.setBounds(50,50,50,50);
-        this.add(point);
+
+        point.setText(player0.getPoints() + "");
+        point.setFont(new Font("Arial", Font.PLAIN, 30));
+        point.setForeground(Color.WHITE);
+
+
 
 
         if (gameOver) {
@@ -285,6 +354,10 @@ public class Field extends JPanel {
 
 
 
+
+
+
+
         g.setColor(Color.WHITE);
         g.drawLine(0, 95, 450, 95);
         g.drawLine(0, 195, 450, 195);
@@ -296,7 +369,11 @@ public class Field extends JPanel {
         g.drawLine(0, 795, 450, 795);
 
 
+
+
         //hashes
+
+
 
 
         g.drawLine(45, 85, 45, 105);
@@ -313,11 +390,13 @@ public class Field extends JPanel {
         int xx = 405;
         int yy1 = 85;
         int yy2 = 105;
-        for (int i = 0; i < 6; i++){
+        for (int i = 0; i < 5; i++){
             yy1+=100;
             yy2+=100;
             g.drawLine(xx, yy1, xx, yy2);
         }
+
+
 
 
         player0.draw(g);
@@ -332,9 +411,13 @@ public class Field extends JPanel {
         }
 
 
+
+
 //        for(Player p: players){
 //            p.draw(g);
 //        }
+
+
 
 
         //if (!gameOver) {
@@ -343,15 +426,23 @@ public class Field extends JPanel {
         } catch (Exception e) {
 
 
+
+
         }
         //}
+
+
 
 
         repaint();
     }
 
 
+
+
     public void setGameOver(boolean gameOver, boolean win, boolean tackle) {
+
+
 
 
         //System.out.println(gameOver);
@@ -359,12 +450,17 @@ public class Field extends JPanel {
         this.win = win;
         this.tackle = tackle;
 
+
         if (gameOver) {
             repaint();
         }
 
 
+
+
     }
+
+
 
 
     public void restart(){
@@ -373,13 +469,21 @@ public class Field extends JPanel {
         player0.setTd(false);
 
 
+
+
         for (Player p : players) {
             p.setX((int) (Math.random() * 400) + 20);
             p.setY((int) (Math.random() * 680) + 10);
         }
 
 
+
+
         gameOver = false;
+
+
+
+
 
 
 
@@ -388,11 +492,17 @@ public class Field extends JPanel {
 //        endzone.setForeground(Color.WHITE);
 
 
+
+
         //System.out.println("Restarting game...");
+
+
 
 
         repaint();
     }
+
+
 
 
 }
