@@ -6,10 +6,6 @@ import java.awt.event.ActionListener;
 
 
 
-
-
-
-
 public class Main {
     public static void main(String[] args) {
 
@@ -17,11 +13,6 @@ public class Main {
         JFrame frame = new JFrame();
         frame.setSize(450,780);
         frame.setLayout(new CardLayout());
-
-
-
-
-
 
 
 

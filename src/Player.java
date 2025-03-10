@@ -18,24 +18,13 @@ public class Player {
 
 
 
-
-
-
-
-
-
-
-
-
     public Player(){
-
-
 
 
         x = (int)(Math.random()*400)+20;
         y = (int)(Math.random()*680)+10;
-        if (y > 675) y-=30;
-        while(y < 95) y+=30;
+        if (y > 675) y -= 30;
+        while(y < 95) y += 30;
         size = 30;
         color = Color.BLUE;
         xSpeed = (int)(Math.random()*6);

@@ -9,9 +9,6 @@ public class Field extends JPanel {
 
 
 
-
-
-
     private Player player0;
     private Player[] players;
     private JLabel endzone;
@@ -21,11 +18,6 @@ public class Field extends JPanel {
     private int defenders;
     private JLabel point;
     private String poi = "00";
-
-
-
-
-
 
 
 
@@ -144,12 +136,6 @@ public class Field extends JPanel {
             }
 
 
-
-
-
-
-
-
         });
 
 
@@ -256,13 +242,9 @@ public class Field extends JPanel {
             public void mousePressed(MouseEvent e) {
 
 
-
-
                 if (gameOver) {
                     restart();
                 }
-
-
 
 
             }
@@ -295,23 +277,11 @@ public class Field extends JPanel {
 
 
 
-
-
-
-
     }
 
 
 
-
-
-
-
-
     private boolean gameOver = false;
-
-
-
 
 
 
