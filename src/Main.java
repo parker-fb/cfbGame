@@ -3,8 +3,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
-
+//try to fix scorebug alignment
+//add a timer and have the game end at the end of the timer
+//find what to make the defenders (image)
 
 public class Main {
     public static void main(String[] args) {
@@ -13,7 +14,6 @@ public class Main {
         JFrame frame = new JFrame();
         frame.setSize(450,780);
         frame.setLayout(new CardLayout());
-
 
 
         //3 difficulties - freshman: 10 balls varsity: 15 balls heisman: 20 balls
@@ -51,7 +51,7 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.getContentPane().removeAll();
-                Field gamePanel = new Field(1);
+                Field gamePanel = new Field(10);
                 gamePanel.setBackground(new Color(50,161,87));
                 frame.add(gamePanel);
                 //frame.repaint();
