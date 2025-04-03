@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 //try to fix scorebug alignment
 //add a timer and have the game end at the end of the timer
-//find what to make the defenders (image)
 
 public class Main {
     public static void main(String[] args) {

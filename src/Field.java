@@ -371,8 +371,8 @@ public class Field extends JPanel {
 
         player0.draw(g);
         for (int i = 0; i < players.length; i++){
-            //players[i].dDraw(g);
-            players[i].draw(g);
+            players[i].dDraw(g);
+            //players[i].draw(g);
             player0.playerDraw(g);
             players[i].move();
             players[i].bounds(this);
