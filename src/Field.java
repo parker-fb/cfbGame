@@ -15,14 +15,31 @@ public class Field extends JPanel {
     private int change = 0;
     private boolean win = false;
     private boolean tackle = false;
+    private boolean timeUp = false;
     private int defenders;
     private JLabel point;
     private String poi = "00";
+    private JLabel timer;
+    private int time = 5;
+    private Timer timerr;
 
 
 
     public Field(int d){
 
+
+        timerr = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (time < 1) {
+                    timeUp = true;
+                    gameOver = true;
+                }
+                time--;
+                timer.setText(time + "");
+            }
+        });
+        timerr.start();
 
         JLabel scorebug = new JLabel("Your Score");
         scorebug.setBounds(345, 675, 100, 50);
@@ -35,6 +52,18 @@ public class Field extends JPanel {
         point.setBounds(380,705,50,50);
         this.add(point);
         defenders = d;
+
+        JLabel timeLabel = new JLabel("Time:");
+        timeLabel.setBounds(25, 675, 100, 50);
+        timeLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        timeLabel.setForeground(Color.WHITE);
+        this.add(timeLabel);
+
+        timer = new JLabel("60");
+        timer.setBounds(30,705,100,50);
+        timer.setForeground(Color.WHITE);
+        this.add(timer);
+
 
 
         //int check = 0;
@@ -66,12 +95,7 @@ public class Field extends JPanel {
 
 
 
-
-
-
         //speed/direction of player
-
-
 
 
         addKeyListener(new KeyAdapter() {
@@ -303,6 +327,8 @@ public class Field extends JPanel {
         point.setFont(new Font("Arial", Font.PLAIN, 30));
         point.setForeground(Color.WHITE);
 
+        timer.setFont(new Font("Arial", Font.PLAIN, 30));
+        point.setForeground(Color.WHITE);
 
 
 
@@ -335,7 +361,7 @@ public class Field extends JPanel {
         g.drawLine(0, 395, 450, 395);
         g.drawLine(0, 495, 450, 495);
         g.drawLine(0, 595, 450, 595);
-        g.drawLine(0, 695, 450, 695);
+        g.drawLine(0, 685, 450, 685);
         g.drawLine(0, 795, 450, 795);
 
 
@@ -351,7 +377,7 @@ public class Field extends JPanel {
         int y1 = 85;
         int y2 = 105;
         //g.drawLine(45, 185, 45, 205);
-        for(int i = 0; i < 6; i++) {
+        for(int i = 0; i < 5; i++) {
             y1+=100;
             y2+=100;
             g.drawLine(x, y1, x, y2);
@@ -406,9 +432,6 @@ public class Field extends JPanel {
 
         repaint();
     }
-
-
-
 
     public void setGameOver(boolean gameOver, boolean win, boolean tackle) {
 
