@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 //try to fix score bug alignment
-//add a timer and have the game end at the end of the timer
 
 public class Main {
     public static void main(String[] args) {

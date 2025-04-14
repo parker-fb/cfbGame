@@ -20,7 +20,7 @@ public class Field extends JPanel {
     private JLabel point;
     private String poi = "00";
     private JLabel timer;
-    private int time = 5;
+    private int time = 10;
     private Timer timerr;
 
 
@@ -35,8 +35,10 @@ public class Field extends JPanel {
                     timeUp = true;
                     gameOver = true;
                 }
-                time--;
-                timer.setText(time + "");
+                if (time > 0) {
+                    time--;
+                    timer.setText(time + "");
+                }
             }
         });
         timerr.start();
@@ -63,6 +65,7 @@ public class Field extends JPanel {
         timer.setBounds(30,705,100,50);
         timer.setForeground(Color.WHITE);
         this.add(timer);
+
 
 
 
@@ -170,8 +173,8 @@ public class Field extends JPanel {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                System.out.println(e);
-                if (!gameOver) {
+                //System.out.println(e);
+                if (!gameOver && !timeUp) {
                     if (change == 0) {
                         //System.out.println("0");
                         endzone.setText("PENN STATE");
@@ -319,6 +322,7 @@ public class Field extends JPanel {
 
 
 
+        System.out.println(!timeUp);
 
         //System.out.println(gameOver);
 
@@ -335,10 +339,14 @@ public class Field extends JPanel {
         if (gameOver) {
             g.setColor(Color.WHITE);
             g.setFont(new Font("Arial", Font.BOLD, 40));
-            if (win) {
+            if (timeUp){
+                g.drawString("TIMES UP!", 130, 350);
+                g.drawString("YOUR SCORE: " + player0.getPoints(), 80, 400);
+            }
+            else if (win) {
                 g.drawString("TOUCHDOWN!", 90, 350);
             }
-            else if (tackle){
+            else if (tackle) {
                 g.drawString("TACKLED!", 130, 350);
             }
             else{
@@ -473,6 +481,8 @@ public class Field extends JPanel {
 
 
         gameOver = false;
+        tackle = false;
+        timeUp = false;
 
 
 
