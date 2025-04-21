@@ -20,7 +20,7 @@ public class Field extends JPanel {
     private JLabel point;
     private String poi = "00";
     private JLabel timer;
-    private int time = 10;
+    private int time = 60;
     private Timer timerr;
 
 
