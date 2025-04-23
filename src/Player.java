@@ -222,6 +222,8 @@ public class Player {
             ((Field)f).setGameOver(true, false, false);
         }
 
+        if (y > 750) ((Field)f).setGameOver(true, false, false);
+
 
 
 
