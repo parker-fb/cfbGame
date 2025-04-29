@@ -464,12 +464,10 @@ public class Field extends JPanel {
 
 
 
-    public void restart(){
+    public void restart() {
         player0.setX(200);
         player0.setY(710);
         player0.setTd(false);
-
-
 
 
         for (Player p : players) {
@@ -478,11 +476,17 @@ public class Field extends JPanel {
         }
 
 
-
-
-        gameOver = false;
+        if (!timeUp){
+            gameOver = false;
         tackle = false;
-        timeUp = false;
+    }
+        else {
+            gameOver = false;
+            tackle = false;
+            timeUp = false;
+            time = 60;
+
+        }
 
 
 
