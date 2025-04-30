@@ -485,7 +485,7 @@ public class Field extends JPanel {
             tackle = false;
             timeUp = false;
             time = 60;
-
+            player0.setPoints(0);
         }
 
 
