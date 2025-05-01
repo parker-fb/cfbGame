@@ -22,6 +22,7 @@ public class Field extends JPanel {
     private JLabel timer;
     private int time = 60;
     private Timer timerr;
+    private int highscore = 0;
 
 
 
@@ -342,6 +343,10 @@ public class Field extends JPanel {
             if (timeUp){
                 g.drawString("TIMES UP!", 130, 350);
                 g.drawString("YOUR SCORE: " + player0.getPoints(), 80, 400);
+                if (player0.getPoints() > highscore) highscore = player0.getPoints();
+                //JLabel high = new JLabel("Your HighScore: " + highscore);
+                g.drawString("Your HighScore: " + highscore, 60, 450);
+
             }
             else if (win) {
                 g.drawString("TOUCHDOWN!", 90, 350);
@@ -489,7 +494,7 @@ public class Field extends JPanel {
         }
 
 
-
+        timer.setText(time + "");
 
 
 
