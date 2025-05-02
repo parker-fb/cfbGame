@@ -53,7 +53,7 @@ public class Main {
                 gamePanel.setBackground(new Color(50,161,87));
                 frame.add(gamePanel);
                 //frame.repaint();
-                frame.revalidate();
+                //frame.revalidate();
                 gamePanel.requestFocusInWindow();
             }
         });
@@ -69,7 +69,7 @@ public class Main {
                 gamePanel.setBackground(new Color(50,161,87));
                 frame.add(gamePanel);
                 //frame.repaint();
-                frame.revalidate();
+                //frame.revalidate();
                 gamePanel.requestFocusInWindow();
             }
         });
@@ -85,7 +85,7 @@ public class Main {
                 gamePanel.setBackground(new Color(50,161,87));
                 frame.add(gamePanel);
                 //frame.repaint();
-                frame.revalidate();
+                //frame.revalidate();
                 gamePanel.requestFocusInWindow();
             }
         });

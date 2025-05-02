@@ -323,7 +323,7 @@ public class Field extends JPanel {
 
 
 
-        System.out.println(!timeUp);
+       // System.out.println(!timeUp);
 
         //System.out.println(gameOver);
 
