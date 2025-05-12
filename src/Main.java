@@ -14,7 +14,7 @@ public class Main {
         frame.setLayout(new CardLayout());
 
 
-        //3 difficulties - freshman: 10 balls varsity: 15 balls heisman: 20 balls
+        //3 difficulties - freshman: 10 balls varsity: 20 balls heisman: 25 balls
 
 
         JLabel panel = new JLabel();
@@ -48,12 +48,11 @@ public class Main {
         freshman.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //I searched this part up to make the program go from the menu with the three buttons to my actual game
                 frame.getContentPane().removeAll();
                 Field gamePanel = new Field(10);
                 gamePanel.setBackground(new Color(50,161,87));
                 frame.add(gamePanel);
-                //frame.repaint();
-                //frame.revalidate();
                 gamePanel.requestFocusInWindow();
             }
         });
@@ -64,12 +63,11 @@ public class Main {
         varsity.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //i searched this part up to make the program go from the menu with the three buttons to my actual game
                 frame.getContentPane().removeAll();
                 Field gamePanel = new Field(20);
                 gamePanel.setBackground(new Color(50,161,87));
                 frame.add(gamePanel);
-                //frame.repaint();
-                //frame.revalidate();
                 gamePanel.requestFocusInWindow();
             }
         });
@@ -80,12 +78,11 @@ public class Main {
         heisman.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //i searched this part up to make the program go from the menu with the three buttons to my actual game
                 frame.getContentPane().removeAll();
                 Field gamePanel = new Field(25);
                 gamePanel.setBackground(new Color(50,161,87));
                 frame.add(gamePanel);
-                //frame.repaint();
-                //frame.revalidate();
                 gamePanel.requestFocusInWindow();
             }
         });
@@ -105,8 +102,6 @@ public class Main {
 
 
 
-//        panel.add(f);
-//        panel.add(v);
 
 
 

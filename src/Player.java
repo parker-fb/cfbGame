@@ -168,6 +168,9 @@ public class Player {
 
     //if player hits defense
     public void checkDefeat(Player p, Field f){
+
+        //basically took this code straight from my ball project from the beginning of the semester
+
         int bx = p.x - this.x;
         int by = p.y - this.y;
         int dist2 = bx * bx + by * by;
@@ -175,11 +178,7 @@ public class Player {
         if (dist2 <= radius * radius){
 
 
-
-
             ((Field)f).setGameOver(true, false, true);
-
-
 
 
             //System.out.println("You lose, Sorry!");

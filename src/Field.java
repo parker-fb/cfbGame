@@ -29,6 +29,7 @@ public class Field extends JPanel {
     public Field(int d){
 
 
+        //asked Mr Seaver for help on this whole timer thing throughout my code
         timerr = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -345,7 +346,7 @@ public class Field extends JPanel {
                 g.drawString("YOUR SCORE: " + player0.getPoints(), 80, 400);
                 if (player0.getPoints() > highscore) highscore = player0.getPoints();
                 //JLabel high = new JLabel("Your HighScore: " + highscore);
-                g.drawString("Your HighScore: " + highscore, 60, 450);
+                g.drawString("Your HIGHSCORE: " + highscore, 20, 450);
 
             }
             else if (win) {
@@ -357,6 +358,7 @@ public class Field extends JPanel {
             else{
                 g.drawString("OUT OF BOUNDS!", 60, 350);
             }
+            //this part of my code wasn't working so i searched it up and it said I have to have return here to make it work
             return;
         }
 
@@ -448,7 +450,8 @@ public class Field extends JPanel {
 
     public void setGameOver(boolean gameOver, boolean win, boolean tackle) {
 
-
+        //dont need to add time boolean because that is a seperate thing on its own
+        //method mostly only used for checking out of bounds
 
 
         //System.out.println(gameOver);
