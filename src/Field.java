@@ -160,7 +160,7 @@ public class Field extends JPanel {
             @Override
             public void keyReleased(KeyEvent e){
                 if (e.getKeyCode() == 16) {
-                    speed = 8; // Reset speed when Shift is released
+                    speed = 8;
                 }
             }
 
@@ -513,7 +513,7 @@ public class Field extends JPanel {
 
 
 
-
+        //not sure if I need all these repaints but they make the code work
         repaint();
     }
 

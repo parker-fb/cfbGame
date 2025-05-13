@@ -29,6 +29,8 @@ public class Main {
         JButton varsity = new JButton("Varsity");
         JButton heisman = new JButton("Heisman");
 
+        JButton help = new JButton("Help?");
+
 
 
 
@@ -36,6 +38,7 @@ public class Main {
         panel.add(freshman);
         panel.add(varsity);
         panel.add(heisman);
+        panel.add(help);
 
 
 
@@ -84,6 +87,19 @@ public class Main {
                 gamePanel.setBackground(new Color(50,161,87));
                 frame.add(gamePanel);
                 gamePanel.requestFocusInWindow();
+            }
+        });
+
+
+        help.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.getContentPane().removeAll();
+                JPanel newPanel = new JPanel();
+                JLabel directions = new JLabel("WASD or Arrow keys to move/nHold shift+direction to spring/nDon't get hit/n score touchdowns");
+                newPanel.add(directions);
+                frame.add(newPanel);
+                newPanel.requestFocusInWindow();
             }
         });
 
