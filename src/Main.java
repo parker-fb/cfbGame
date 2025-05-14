@@ -11,7 +11,7 @@ public class Main {
 
         JFrame frame = new JFrame();
         frame.setSize(450,780);
-        frame.setLayout(new CardLayout());
+        frame.setLayout(new BoxLayout());
 
 
         //3 difficulties - freshman: 10 balls varsity: 20 balls heisman: 25 balls
@@ -29,7 +29,11 @@ public class Main {
         JButton varsity = new JButton("Varsity");
         JButton heisman = new JButton("Heisman");
 
-        JButton help = new JButton("Help?");
+        //JButton help = new JButton("Help?");
+
+        JLabel help = new JLabel("help", SwingConstants.CENTER);
+
+
 
 
 
@@ -91,17 +95,17 @@ public class Main {
         });
 
 
-        help.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.getContentPane().removeAll();
-                JPanel newPanel = new JPanel();
-                JLabel directions = new JLabel("WASD or Arrow keys to move/nHold shift+direction to spring/nDon't get hit/n score touchdowns");
-                newPanel.add(directions);
-                frame.add(newPanel);
-                newPanel.requestFocusInWindow();
-            }
-        });
+//        help.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                frame.getContentPane().removeAll();
+//                JPanel newPanel = new JPanel();
+//                frame.add(newPanel);
+//                JLabel directions = new JLabel("WASD or Arrow keys to move/nHold shift+direction to spring/nDon't get hit/n score touchdowns");
+//                newPanel.add(directions);
+//                newPanel.requestFocusInWindow();
+//            }
+//        });
 
 
 
