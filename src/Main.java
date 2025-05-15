@@ -6,19 +6,21 @@ import java.awt.event.ActionListener;
 //try to fix score bug alignment
 
 public class Main {
-    public static void main(String[] args) {
 
+    private static ImageIcon helpIcon = new ImageIcon("icons8-help-50_1_optimized.png");
+
+    public static void main(String[] args) {
 
         JFrame frame = new JFrame();
         frame.setSize(450,780);
-        frame.setLayout(new BoxLayout());
+        frame.setLayout(new CardLayout());
 
 
         //3 difficulties - freshman: 10 balls varsity: 20 balls heisman: 25 balls
 
 
         JLabel panel = new JLabel();
-        panel.setLayout(new GridLayout(4, 1));
+        panel.setLayout(new GridLayout(5, 1));
         JLabel title = new JLabel("Choose Difficulty", SwingConstants.CENTER);
         title.setFont(new Font("Arial", Font.BOLD, 20));
 
@@ -31,7 +33,7 @@ public class Main {
 
         //JButton help = new JButton("Help?");
 
-        JLabel help = new JLabel("help", SwingConstants.CENTER);
+        JButton help = new JButton(helpIcon);
 
 
 
@@ -95,17 +97,19 @@ public class Main {
         });
 
 
-//        help.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                frame.getContentPane().removeAll();
-//                JPanel newPanel = new JPanel();
-//                frame.add(newPanel);
-//                JLabel directions = new JLabel("WASD or Arrow keys to move/nHold shift+direction to spring/nDon't get hit/n score touchdowns");
-//                newPanel.add(directions);
-//                newPanel.requestFocusInWindow();
-//            }
-//        });
+        help.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame, "• WASD or Arrow Keys to Move\n• Hold shift+direction to Sprint\n• Click Screen to Change Team\n• Don't Get Hit by Defenders\n• Score Touchdowns Before Timer Runs Out");
+//                JTextArea msg = new JTextArea("• WASD or Arrow keys to move • Hold shift+direction to sprint • Don't get hit by defenders • Score touchdowns before timer runs out");
+//                msg.setLineWrap(true);
+//                msg.setWrapStyleWord(true);
+//
+//                JScrollPane scrollPane = new JScrollPane(msg);
+//
+//                JOptionPane.showMessageDialog(null, scrollPane);
+            }
+        });
 
 
 
