@@ -166,10 +166,8 @@ public class Player {
 
 
 
-    //if player hits defense
     public void checkDefeat(Player p, Field f){
 
-        //basically took this code straight from my ball project from the beginning of the semester
 
         int bx = p.x - this.x;
         int by = p.y - this.y;
@@ -195,7 +193,6 @@ public class Player {
 
 
 
-    //for defense to go back and forth
     public void bounds(Field f){
         if (x > f.getSize().getWidth() - size){
             xSpeed *= -1;
@@ -210,7 +207,6 @@ public class Player {
 
 
 
-    //see if player runs out of bound or scores
     public void playerBounds(Field f){
         if (x > f.getSize().getWidth() - size){
             //System.out.println("You lose! Out of Bounds");
